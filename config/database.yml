@@ -1,8 +1,17 @@
-production:
+development:
   adapter: mysql2
   username: HoopAlert
   password: password
   host: localhost
+  pool: 50
+  reconnect: true
+  database: HoopAlert
+  
+production:
+  adapter: mysql2
+  username: HoopAlert
+  password: password
+  host: ec2-54-88-147-98.compute-1.amazonaws.com
   pool: 50
   reconnect: true
   database: HoopAlert
