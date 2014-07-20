@@ -13,45 +13,7 @@
 </head>
 <body>
 
-<header class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="navbar-inner">
-		<div class="container">
-			<%= image_tag("logo.jpg", alt: "Logo", id: "logo", width: "48px") %>
-			<%= link_to "Hoop Alert", '#', id: "logo" %>
-			<nav>
-				<ul class="nav pull-right">
-					<li>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</li>
-					<li>
-						<div class="dropdown">
-							<button type="button" class="btn btn-default" id="dropdownMenuMenu" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-align-justify"></span>
-							</button>
-							<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenuMenu">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu Item 1</a></li>
-							</ul>
-						</div>
-					</li>
-					<!--
-					<li>
-						<div class="dropdown">
-							<button type="button" class="btn btn-default" id="dropdownMenuUser" data-toggle="dropdown">
-								<span class="glyphicon glyphicon-user"></span>
-							</button>
-							<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenuUser">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log In</a></li>
-							</ul>	
-						</div>	
-					</li>
-					-->
-				<ul>
-			</nav>
-		</div>
-	</div>
-</header>
+<%= render 'layouts/header' %>
 
 <div class="container">
 	<%= yield %>
