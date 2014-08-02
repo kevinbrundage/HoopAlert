@@ -1,5 +1,14 @@
 HoopAlert::Application.routes.draw do
-  get "static_pages/home"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root 'static_pages#home'
+  match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/office', to: 'static_pages#office', via: 'get'
+  match '/locker', to: 'static_pages#locker', via: 'get'
+  match '/registration_success', to: 'static_pages#registration_success', via: 'get'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

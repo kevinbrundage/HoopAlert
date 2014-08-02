@@ -1,2 +1,15 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center jumbotron">
+  <h1>Welcome to Hoop Alert!</h1>
+
+  <h3>
+    Here, you'll find all the AAU action you could ever hope for.  Track tournament and league results as they're posted.  Post photos and videos, and team up with all your hoops friends online.
+  </h3>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary fullWidth" %>
+  
+  <h3>
+	  Already a member?
+  </h3>
+  
+  <%= link_to "Log In!", '#', class: "btn btn-large btn-primary fullWidth" %>
+</div>
