@@ -2,7 +2,7 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<%= image_tag("logo.jpg", alt: "Logo", id: "logo", width: "48px") %>
-			<%= link_to "Hoop Alert", '#', id: "logo" %>
+			<%= link_to "Hoop Alert", root_path, id: "logo" %>
 			<nav>
 				<ul class="nav pull-right">
 					<li class="header-button">
@@ -11,43 +11,29 @@
 						</button>
 					</li>
 					<li class="header-button">
-						<% if signed_in? %>
 							<div class="dropdown">
 								<button type="button" class="btn btn-default" id="dropdownMenuMenu" data-toggle="dropdown">
 									<span class="glyphicon glyphicon-user"></span>
 								</button>
-								<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenuMenu">
-									<li role="presentation">
-										<a href="#" tabindex="-1" role="menuitem"><span class="glyphicon glyphicon-lock"></span> Test</a>
-									</li>
-									<li role="presentation">
-										<a href="#" tabindex="-1" role="menuitem"><span class="glyphicon glyphicon-lock"></span> Test</a>
-									</li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation">
-										<%= link_to signout_path, method: 'delete' do %>
-											<span class="glyphicon glyphicon-lock"></span>Sign Out
+								
+								<div id="userDropdown" class="list-group dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenuMenu">
+									<% if signed_in? %>
+										<%= link_to current_user, class: "list-group-item userDropdownItem", role: 'menuitem' do %>
+											<span class="glyphicon glyphicon-lock"></span> Profile
 										<% end %>
-									</li>
-									<!--
-									<li role="presentation">
-										<span class="glyphicon glyphicon-lock"></span><%= link_to "Sign In", '#', tabindex: -1, role: "menuitem" %>
-									</li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation">
-										<span class="glyphicon glyphicon-user"></span><%= link_to "Profile", '#', tabindex: -1, role: "menuitem" %>
-									</li>
-									<li role="presentation">
-										<span class="glyphicon glyphicon-cog"></span> <%= link_to "Preferences", '#', tabindex: -1, role: "menuitem" %>
-									</li>
-										-->
-								</ul>
-							</div>
-						<% else %>
-							<%= link_to signin_path, class: 'btn btn-default' do %> 
-									<span class="glyphicon glyphicon-user"></span>
-							<% end %>
-						<% end %>						
+										<%= link_to root_url, class: "list-group-item userDropdownItem", role: 'menuitem' do %>
+											<span class="glyphicon glyphicon-cog"></span> Settings
+										<% end %>
+										<%= link_to signout_path, method: "delete", class: "list-group-item userDropdownItem userDropdownItem", role: 'menuitem' do %>
+											<span class="glyphicon glyphicon-lock"></span> Sign out
+										<% end %>
+									<% else %>
+										<%= link_to signin_path, class: "list-group-item userDropdownItem", role: 'menuitem' do %>
+											<span class="glyphicon glyphicon-lock"></span> Sign in
+										<% end %>
+									<% end %>
+								</div>
+							</div>					
 					</li>
 					<!--
 					<li>

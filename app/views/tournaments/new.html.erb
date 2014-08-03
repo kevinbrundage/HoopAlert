@@ -1,0 +1,25 @@
+<h1>New Tournament</h1>
+
+<%= render 'shared/error_messages' %>
+
+<%= form_for(@tournament) do |t| %>
+	<%= t.label :name %>
+	<%= t.text_field :name %>
+	
+	<%= t.label :description %>
+	<%= t.text_area :description %>
+	
+	<%= t.label :primary_city %>
+	<%= t.text_field :primary_city %>
+	
+	<%= t.label :primary_state %>
+	<%= t.text_field :primary_state %>
+	
+	<%= t.label :start_date%>
+	<%= t.date_field :start_date %>
+		
+	<%= t.label :end_date%>
+	<%= t.date_field :end_date %>		
+	
+	<%= t.submit "Create Tournament", class: "btn btn-large btn-primary" %>
+<% end%>

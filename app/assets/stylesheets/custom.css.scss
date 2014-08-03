@@ -10,6 +10,8 @@
 	box-sizing: border-box;
 }
 
+$smallScreenWidth: 350px;
+
 
 /* Universal Styles */
 
@@ -21,8 +23,8 @@ body {
 	text-align: center;
 }
 
-.fullWidth {
-	//width: 100%;
+.alwaysFullWidth {
+	width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -59,6 +61,16 @@ li.header-button {
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+#userDropdown {
+	padding: 0px;
+}
+
+.userDropdownItem {
+	@media (max-width: $smallScreenWidth) {
+		padding: 30px;
+	}
 }
 
 

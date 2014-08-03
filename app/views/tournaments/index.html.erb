@@ -1,0 +1,14 @@
+<h1>All Tournaments</h1>
+
+<% @tournaments.each do |t| %>
+	<div class="row">
+		<p>
+			<%= link_to t do %>
+				<h2><%= t.name %></h2>
+			<% end %>
+		</p>
+		<p><%= t.description %></p>
+		<p><%= t.primary_city %>, <%= t.primary_state %></p>
+		<p><%= t.start_date %> - <%= t.end_date %></p>
+	</div>
+<% end %>
