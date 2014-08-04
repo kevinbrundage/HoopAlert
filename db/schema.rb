@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803211744) do
+ActiveRecord::Schema.define(version: 20140804001709) do
 
   create_table "tournaments", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140803211744) do
     t.string   "primary_state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "soft_delete"
   end
 
   create_table "users", force: true do |t|

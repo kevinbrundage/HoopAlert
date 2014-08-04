@@ -16,10 +16,10 @@
 	<%= t.text_field :primary_state %>
 	
 	<%= t.label :start_date%>
-	<%= t.date_field :start_date %>
+	<%= t.date_field :start_date, placeholder: 'MM/DD/YYYY' %>
 		
 	<%= t.label :end_date%>
-	<%= t.date_field :end_date %>		
+	<%= t.date_field :end_date, placeholder: 'MM/DD/YYYY' %>		
 	
 	<%= t.submit "Create Tournament", class: "btn btn-large btn-primary" %>
 <% end%>

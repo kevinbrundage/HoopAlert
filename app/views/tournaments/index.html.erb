@@ -4,7 +4,12 @@
 	<div class="row">
 		<p>
 			<%= link_to t do %>
-				<h2><%= t.name %></h2>
+					<% if t.soft_delete %>
+						<h3><span style="color: red">DELETED:  <%= t.name %></span></h3>
+					<% else %>
+						<h3><%= t.name %></h3>
+					<% end %>
+				<%= link_to "Delete", tournament_path(t.id), method: 'delete' %>
 			<% end %>
 		</p>
 		<p><%= t.description %></p>
